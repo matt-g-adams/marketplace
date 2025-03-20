@@ -2,14 +2,14 @@
 
 ## [Rate Limiter](https://github.com/matt-g-adams/marketplace/blob/main/lib/rate_limiter.rb)
 
-* I made constants for the duration of the window and the maximum allowed requests so there are no magic numbers in the code.
-* I used a Hash data structure to allow constant time lookups of requests by user ID.
-* The values in the Hash are Arrays of request timestamps for the each user.
+* I made constants for `MAX_REQUESTS` and `WINDOW` so there are no magic numbers in the code.
+* I used a `Hash` data structure to allow constant time lookups of requests by `user_id`.
+* The values in the `Hash` are `Array`s of request timestamps for the each user.
 * I decided that if a user makes two requests at exactly 30 seconds apart, those would be considered part of the same window.
-* Each time allow_request? is called, timestamps that are more than 30 seconds old are deleted from the user's Array.
-* A timestamp is only added to the Array if the request is accepted.
+* Each time `allow_request?` is called, timestamps that are more than 30 seconds old are deleted from the user's `Array`.
+* A `timestamp` is only added to the `Array` if the request is accepted.
 * Assuming that the number of allowed requests per time window is a contant, this ensures that the algorithm runs in constant time.
-* If i needed to scale to more users or if I needed to coordinate rate limiting across server instances, I could easily use Redis instead of a hash.
+* If i needed to scale to more users or if I needed to coordinate rate limiting across server instances, I could easily use Redis instead of a `Hash`.
 
 ## Job Marketplace API
 
