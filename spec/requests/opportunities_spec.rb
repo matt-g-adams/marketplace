@@ -76,7 +76,7 @@ RSpec.describe "/opportunities", type: :request do
     end
 
     context 'with limit of 0' do
-      it 'renders the opportunity' do
+      it 'does not render the opportunity' do
         get opportunities_url, params: { limit: 0 }
         expect(response.body).to_not include("Staff Engineer")
       end
@@ -91,7 +91,7 @@ RSpec.describe "/opportunities", type: :request do
     end
 
     context 'with same after_id' do
-      it 'renders the opportunity' do
+      it 'does not render the opportunity' do
         get opportunities_url, params: { after_id: 1 }
         expect(response.body).to_not include("Staff Engineer")
       end
