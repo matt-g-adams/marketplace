@@ -1,6 +1,6 @@
 # README
 
-## Rate Limiter
+## [Rate Limiter](https://github.com/matt-g-adams/marketplace/blob/main/lib/rate_limiter.rb)
 
 * I made constants for the duration of the window and the maximum allowed requests so there are no magic numbers in the code.
 * I used a Hash data structure to allow constant time lookups of requests by user ID.
