@@ -24,7 +24,7 @@ RSpec.describe "/opportunities", type: :request do
       client_id: 1,
       salary: 170,
       title: 'Staff Engineer',
-      description: 'Proven experience (minimum 3 years) as a Senior/Staff Engineer, Technical Lead, or similar role in a high-scale production environment.',
+      description: 'Proven experience (minimum 3 years) as a Senior/Staff Engineer, Technical Lead, or similar role in a high-scale production environment.'
     }
   }
 
