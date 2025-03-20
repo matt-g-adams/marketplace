@@ -4,7 +4,7 @@
 
 * I made constants for `MAX_REQUESTS` and `WINDOW` so there are no magic numbers in the code.
 * I used a `Hash` data structure to allow constant time lookups of requests by `user_id`.
-* The values in the `Hash` are `Array`s of request timestamps for the each user.
+* The values in the `Hash` are Arrays of request timestamps for the each user.
 * I decided that if a user makes two requests at exactly 30 seconds apart, those would be considered part of the same window.
 * Each time `allow_request?` is called, timestamps that are more than 30 seconds old are deleted from the user's `Array`.
 * A `timestamp` is only added to the `Array` if the request is accepted.
